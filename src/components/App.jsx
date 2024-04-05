@@ -81,11 +81,11 @@ export class App extends Component {
     return (
       <section className="app">
         <SearchBar onSubmit={this.handleSearch} />
-        <ImageGallery
+        {!!totalHits && <ImageGallery
           images={images}
           ref={this.galleryRef}
           handleImageClick={this.handleImageClick}
-        />
+        />}
         {isShowButton && <Button onClick={this.handleLoadMore} />}
         {isLoading && <Loader />}
         {largeImageUrl && (
